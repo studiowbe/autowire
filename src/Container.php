@@ -59,13 +59,8 @@ class Container implements ContainerInterface
     public function get($id)
     {
         $entry = $this->getContainer()->get($id);
-        if (is_object($entry)) {
-            $callbacks = $this->getCallbacks($entry);
-            foreach ($callbacks as $callback) {
-                call_user_func_array($callback, [$entry, $this]);
-            }
-        }
-        return $entry;
+
+        return $this->applyCallbacks($entry);
     }
 
     /**
@@ -101,6 +96,17 @@ class Container implements ContainerInterface
             }
             return $carry;
         }, []);
+    }
 
+    public function applyCallbacks($item)
+    {
+        if (is_object($item)) {
+            $callbacks = $this->getCallbacks($item);
+            foreach ($callbacks as $callback) {
+                call_user_func_array($callback, [$item, $this]);
+            }
+        }
+
+        return $item;
     }
 }
