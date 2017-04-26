@@ -24,8 +24,5 @@
       "Studiow\\Autowire\\": "src",
       "Studiow\\Autowire\\Test\\": "tests"
     }
-  },
-  "provide": {
-    "psr/container-implementation": "^1.0"
   }
 }
