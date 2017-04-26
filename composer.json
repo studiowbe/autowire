@@ -1,0 +1,31 @@
+{
+  "name": "studiow/autowire",
+  "description": "Autowire-able container",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Willem Wollebrants",
+      "email": "willem@studiow.be",
+      "homepage": "http://studiow.be",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "psr/container": "^1.0",
+    "phpunit/phpunit": "^6.1"
+  },
+  "require-dev": {
+    "league/container": "^2.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Studiow\\Autowire\\": "src",
+      "Studiow\\Autowire\\Test\\": "test"
+    }
+  },
+  "provide": {
+    "psr/container-implementation": "^1.0"
+  }
+}
