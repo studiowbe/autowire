@@ -22,7 +22,7 @@
   "autoload": {
     "psr-4": {
       "Studiow\\Autowire\\": "src",
-      "Studiow\\Autowire\\Test\\": "test"
+      "Studiow\\Autowire\\Test\\": "tests"
     }
   },
   "provide": {
